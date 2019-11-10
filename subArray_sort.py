@@ -1,6 +1,14 @@
 # O(n) time
 # O(1) space
 
+# code walthrough:
+#     1. find the elements which are not in correct order
+#     2. find the min and max in those elements (which are not in order)
+#     3. find the correct index of the min and max elements in the original array
+#     4. answer is, range = index(min) to index(max)
+
+#        this range needs to be sorted
+
 def subArray_sort(array):
 
     minOutOfOrder = float("inf")
@@ -34,7 +42,7 @@ def outOfOrder(i, num, array):
         return array[i - 1] > num or array[i + 1] < num
 
 
-arr = [2,1]
+arr = [1,2,3,5,8,7,6,9,12,15]
 
 print(subArray_sort(arr))
 
