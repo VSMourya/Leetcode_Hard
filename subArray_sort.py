@@ -78,3 +78,18 @@ print(subArray_sort(arr))
 #
 # arr = [1,2,4,7,10,11,7,12,6,7,16,18,19]
 # print(getAnswer(arr))
+
+# 3
+
+# O(nlogn) time
+# O(1) space
+
+#
+# def getAnswer(ls):
+
+#     isSame = [x == y for x,y in zip(ls, sorted(ls))]
+
+#     if all(isSame):
+#         return 0
+#     else:
+#         return [isSame[::-1].index(False),len(ls) - isSame.index(False)]
