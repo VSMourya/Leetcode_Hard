@@ -4,6 +4,11 @@
 #         self.val = x
 #         self.next = None
 
+
+# O(nlogn) time where n are the number of nodes 
+# O(N) space 
+
+
 def mergeKLists(self, lists: List[ListNode]) -> ListNode:
     if not lists or not any(lists):
         return
