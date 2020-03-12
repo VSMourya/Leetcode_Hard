@@ -1,0 +1,19 @@
+time - O(nlogn)
+space - O(n)
+
+class Solution:
+    def closestKValues(self, root: TreeNode, target: float, k: int) -> List[int]:
+        
+        ls = []
+        
+        def inOrder(root):
+            if root:
+                inOrder(root.left)
+                ls.append(root.val)
+                inOrder(root.right)
+        inOrder(root)
+        
+        diff = sorted([[abs(ls[i]-target),i] for i in range(len(ls))],key=lambda x:x[0])
+        res = [ls[diff[i][1]] for i in range(len(diff)) ]
+        
+        return res[:k]
